@@ -1,12 +1,12 @@
 import { TouchableOpacity, StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
-export default function Task({ text }) {
+export default function Task({ task }) {
     return (
         <View style={styles.item}>
             <View style={styles.itemLeft}>
                 <View style={styles.square}></View>
-                <Text style={styles.itemText}>{text}</Text>
+                <Text style={styles.itemText}>{task}</Text>
             </View>
             <View style={styles.circular}></View>
         </View>

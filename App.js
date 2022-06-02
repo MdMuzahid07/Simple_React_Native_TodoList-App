@@ -46,15 +46,33 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   items: {
-
+    marginTop: 30,
   },
   writeTaskWrapper: {
- 
+    position: 'absolute',
+    bottom: 50,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20
   },
   input: {
-
+    padding: 15,
+    minWidth: 250,
+    paddingHorizontal: 50,
+    backgroundColor: 'white',
+    paddingHorizontal: 50,
+    borderRadius: 50
   },
   addWrapper: {
+    backgroundColor: 'white',
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
 
   },
   addText: {

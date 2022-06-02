@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { TouchableOpacity, KeyboardAvoidingView, StyleSheet, Text, TextInput, ScrollView, View } from 'react-native';
+import { TouchableOpacity, KeyboardAvoidingView, StyleSheet, Text, TextInput, ScrollView, View,Keyboard } from 'react-native';
 import Task from './components/Task';
 
 export default function App() {
@@ -9,8 +9,18 @@ export default function App() {
   const [taskTexts, setTaskTexts] = useState([]);
 
   const handleAddTask = () => {
+    Keyboard.dismiss();
     setTaskTexts([...taskTexts, task]);
     setTask(null);
+  }
+
+
+  // for delete tasks
+
+  const completeTask = (index) => {
+    let taskCopy = [...taskTexts];
+    taskCopy.splice(index, 1);
+    setTaskTexts(taskCopy);
   }
 
 
@@ -21,7 +31,11 @@ export default function App() {
         <ScrollView style={styles.items}>
           {
             taskTexts?.map((task, index) => {
-              return <Task key={index} task={task} />
+              return (
+                <TouchableOpacity onPress={(index) => completeTask(index)}>
+                  <Task key={index} task={task} />
+                </TouchableOpacity>
+              )
             })
           }
         </ScrollView>
